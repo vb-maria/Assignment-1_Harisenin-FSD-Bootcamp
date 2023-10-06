@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="I'm a web developer with a passion for creating user-friendly websites and applications. Explore my portfolio to see my latest projects and skills." />
+    <meta
+      name="author"
+      content="Maria José" />
+    <title>MyPortfolio | Resume</title>
+    <!--Tailwind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+        screens: {
+        sm: '480px',
+        md: '768px',
+        lg: '999px',
+        xl: '1440px',
+      },
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'base1': '#F2F5F9',
+        'container' : '#FFFFFF',
+        'accent1': '#FF9C1A',
+        'contrast1':'#ffebd1',
+        'accent2': '#EC1B09',
+        'text1': '#0b0909',
+        'text2': '#858484', 
+        'base2':'#f2f7fc',
+        'darkbase':'#E1E8EF',
+        'darkcontrast':'#FFE3BF'
+      },
+      extend: {
+        maxWidth: {
+        '16': '16rem',
+        }
+      },
+    },
+    plugins: [
+      // ...
+    ],
+  }  
+  </script> 
+    <!-- Google Fonts (Pacifico, Poppins, Raleway)-->
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700;800;900&family=Raleway:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+    <!-- Icons-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <style type="text/tailwindcss">
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+
+      /*Custom classes */
+      @layer utilities {
+        .active-element {
+          background-color: theme("colors.accent1");
+          color: theme("colors.base2");
+          border-radius: 1rem; /* This is equivalent to rounded-2xl in Tailwind */
+          height: 80px;
+          width: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .inactive-element {
+          background-color: #E1E8EF;
+          color: theme("colors.text1");
+          border-radius: 1rem;
+          height: 80px;
+          width: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .divider {
+          background: rgb(254, 145, 25);
+          background: linear-gradient(
+            90deg,
+            rgba(254, 145, 25, 1) 0%,
+            rgba(237, 37, 10, 1) 35%
+          );
+        }
+
+        .customicon {
+          background-color: theme("colors.base2");
+          display: flex;
+          @apply rounded-xl;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.5rem;
+          padding: 1.5rem;
+        }
+
+        .colgap {
+          column-gap: 1.5rem;
+        }
+      }
+
+      @layer base {
+        html {
+          font-size: 16px;
+        }
+        h1 {
+          @apply text-2xl;
+        }
+
+        h2 {
+          @apply text-2xl;
+        }
+
+        p {
+          @apply text-2xl;
+          min-width: 100%;
+          width: 100%;
+        }
+
+        span {
+          @apply text-lg;
+        }
+        /* Fonts */
+
+        p,
+        span,
+        a {
+          @apply font-[Raleway];
+        }
+
+        body {
+          @apply font-[Raleway];
+        }
+      }
+
+      .ri-whatsapp-fill {
+        color: #00a808;
+      }
+
+      .ri-linkedin-box-fill {
+        color: #0077b5;
+      }
+
+      .ri-github-fill {
+        color: #000;
+      }
+
+      #profile-contact > div {
+        padding-bottom: 16px;
+        border-bottom: 1px solid #cdcdcd;
+      }
+
+      #softskills .grid-cols-3 > *:nth-child(4n + 2) {
+        place-content: end;
+      }
+
+      #education span,
+      #experience span {
+        display: block;
+        font-size: 14;
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-base1 max-w-[2000px] w-full transition-all mx-auto text-text1 text-xl bg-base1 px-[1rem] md:px-[1.5%] lg:px-[2%] xl:px-[5%] pt-[4%] md:pt-2 pb-[4%] md:pb-6 grid place-items-center place-content-center grid-rows-auto lg:grid-rows-[max-content_1fr] grid-cols-[100%] lg:grid-cols-[33%_67%] lg:colgap">
+    <!--Header witth logo-->
+    <!--R1-->
+    <header
+      class="container bg-base1 h-28 max-h-28 place-self-start w-full min-w-full px-0 py-[1rem] row-start-1 row-end-2 col-start-1 col-end-3 grid grid-rows-1 grid-cols-2 place-items-start items-center focus:outline-none hover:opacity-75 transition-opacity">
+      <div
+        class="row-start-1 row-end-2 col-start-1 col-end-2"
+        aria-label="Back to Homepage">
+        <a href="/">
+          <span
+            class="text-accent2 text-2xl text-left font-[Pacifico] font-medium"
+            >My</span
+          ><span
+            class="text-accent1 text-2xl text-left font-[Pacifico] font-medium"
+            >Portfolio</span
+          >
+        </a>
+      </div>
+      <div
+        class="w-full row-start-1 row-end-2 col-start-2 col-end-3 text-right">
+        <button
+          id="menu"
+          class="lg:hidden focus:outline-none focus-visible:ring-4 ring-neutral-900 rounded-sm ring-offset-4 ring-offset-amber-400 text-accent2 hover:accent-accent1 transition-colors"
+          aria-expanded="false"
+          aria-label="Open Menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!--Left Side on Large-->
+    <!--R2-->
+    <div
+      id="left-side"
+      class="container drop-shadow-sm px-8 pt-7 pb-14 flex flex-col items-center row-start-2 row-end-3 col-start-1 col-end-3 lg:col-end-2 rounded-xl bg-container min-w-[90%] h-[100%] min-h-[100%]">
+      <!--Auth-->
+      <div
+        id="profile-details "
+        class="bg-container min-w-full px-0 py-7 flex flex-col items-center text-center">
+        <picture>
+          <source
+            srcset="./assets/pictures/profile-picture-bg.webp"
+            type="image/webp" />
+          <img
+            src="./assets/pictures/profile-picture-bg.png"
+            alt="Profile Picture"
+            width="200"
+            height="200"
+            class="rounded-xl hover:opacity-95 transition-opacity" />
+        </picture>
+        <span class="text-[1.8rem] font-bold font-[Raleway] py-[1rem]"
+          >Maria José<br />Valbuena</span
+        >
+        <span class="text-text2 font-[Raleway] text-base font-medium"
+          >Full-Stack Developer</span
+        >
+        <div
+          id="profile-links "
+          class="min-w-full h-[4rem] flex flex-row max-w-full justify-center self-center p-2 gap-[2%]">
+          <a
+            target="blank"
+            href="https://wa.me/6285955106597"
+            class="customicon w-[4rem] h-full"
+            ><i class="ri-whatsapp-fill"></i
+          ></a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/maria-jose-valbuena-bustos/"
+            class="customicon w-[4rem] h-full"
+            ><i class="ri-linkedin-box-fill"></i
+          ></a>
+          <a
+            target="_blank"
+            href="https://github.com/vb-maria"
+            class="customicon w-[4rem] h-full"
+            ><i class="ri-github-fill"></i
+          ></a>
+        </div>
+      </div>
+
+      <div
+        id="profile-contact"
+        class="px-8 py-14 flex gap-6 flex-col min-w-full w-full items-center bg-base1 rounded-xl">
+        <!-- Contact Cards -->
+        <div class="flex flex-row justify-start items-center w-full bg-base1">
+          <div
+            class="flex flex-col items-center px-4 py-4 bg-base2 rounded-2xl">
+            <img
+              src="./assets/icons/phone.svg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-center pl-2">
+            <span class="text-md font-medium text-text2">Phone</span>
+            <a
+              href="https://wa.me/6285955106597"
+              class="text-text1 font-bold text-base"
+              >+6285955106597</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-start items-center w-full">
+          <div
+            class="flex flex-col items-center bg-base2 rounded-2xl px-4 py-4">
+            <img
+              src="./assets/icons/email.svg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-center pl-2">
+            <span class="text-md font-medium text-text2">Email</span>
+            <a
+              href="mailto:mariajose_dev@outlook.com"
+              class="text-text1 font-bold text-base"
+              >mariajose_dev<br class="block xl:hidden" />@outlook.com</a
+            >
+          </div>
+        </div>
+
+        <div class="flex flex-row justify-start items-center w-full">
+          <div
+            class="flex flex-col items-center bg-base2 rounded-2xl px-4 py-4">
+            <img
+              src="./assets/icons/location.svg"
+              alt="" />
+          </div>
+          <div class="flex flex-col justify-center pl-2">
+            <span class="text-md font-medium text-text2">Location</span>
+            <a
+              href="http://"
+              class="text-text1 font-bold text-base"
+              >Indonesia</a
+            >
+          </div>
+        </div>
+
+        <!-- Download Button -->
+        <a
+          href="./assets/documents/cv-mariajose.pdf"
+          download
+          class="flex flex-row items-center py-2 px-6 bg-accent1 rounded-3xl gap-2 text-base2 mx-auto hover:shadow-sm transition-shadow focus:outline-none focus-visible:ring-4 ring-neutral-900 ring-offset-4 ring-offset-white">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          <span class="text-base2 font-[Raleway] font-[500] text-xs"
+            >Download Resume</span
+          >
+        </a>
+      </div>
+    </div>
+    <!--Right Side on Large-->
+
+    <!--R2-->
+
+    <div
+      id="right-side"
+      class="container h-full w-full min-w-[90%] flex flex-col">
+      <!--Navbar-->
+      <div
+        class="container px-0 py-3.5 flex w-6 flex-row justify-end items-center place-self-end">
+        <nav
+        class="rounded-xl lg:flex w-[auto] px-20 lg:mr-[100px] border-2 border-[#cdcdcd] bg-base2 drop-shadow-sm lg:w-fit">
+        <div
+          role="menubar"
+          class="self-end lg:rounded-2xl hidden flex-col gap-10 absolute z-1 right-0 left-0 top-24 text-center text-lg items-center lg:flex lg:flex-row lg:static lg:justify-end lg:align-middle lg:w-[100%] lg:h-[100px]">
+            <a
+              role="menuitem"
+              class="inactive-element hover:contrast-50 transition-all"
+              href="/">
+              <div class="inline-flex flex-col items-center">
+                <i class="text-container">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.959 1.6601C12.8259 1.55635 12.662 1.5 12.4932 1.5C12.3245 1.5 12.1606 1.55635 12.0275 1.6601L1.25 10.0639L2.18225 11.2429L3.5 10.2154V19.4996C3.50079 19.8972 3.65908 20.2783 3.94022 20.5594C4.22135 20.8405 4.60242 20.9988 5 20.9996H20C20.3976 20.9988 20.7787 20.8405 21.0598 20.5594C21.3409 20.2783 21.4992 19.8972 21.5 19.4996V10.2221L22.8177 11.2496L23.75 10.0706L12.959 1.6601ZM14 19.4996H11V13.4996H14V19.4996ZM15.5 19.4996V13.4996C15.4996 13.1019 15.3414 12.7206 15.0602 12.4394C14.779 12.1582 14.3977 12 14 11.9996H11C10.6023 12 10.221 12.1582 9.93978 12.4394C9.65856 12.7206 9.5004 13.1019 9.5 13.4996V19.4996H5V9.0461L12.5 3.2036L20 9.0536V19.4996H15.5Z"
+                      fill="#1A1003"
+                      fill-opacity="0.5" />
+                  </svg>
+                </i>
+                <span class="text-[12px] font-[Raleway] font-semibold mt-[-5px]"
+                  >Home</span
+                >
+              </div>
+            </a>
+
+            <a
+              role="menuitem"
+              class="active-element transition-all"
+              href="./contact.html">
+              <div class="inline-flex flex-col items-center">
+                <i class="text-text2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19.5 0H4.5C3.96957 0 3.46086 0.210714 3.08579 0.585786C2.71071 0.960859 2.5 1.46957 2.5 2V5H0.5V7H2.5V9H0.5V11H2.5V13H0.5V15H2.5V18C2.5 18.5304 2.71071 19.0391 3.08579 19.4142C3.46086 19.7893 3.96957 20 4.5 20H19.5C19.7652 20 20.0196 19.8946 20.2071 19.7071C20.3946 19.5196 20.5 19.2652 20.5 19V1C20.5 0.734784 20.3946 0.48043 20.2071 0.292893C20.0196 0.105357 19.7652 0 19.5 0ZM11.5 2.999C13.148 2.999 14.5 4.35 14.5 5.999C14.4971 6.79385 14.1801 7.55533 13.6182 8.11747C13.0562 8.67962 12.2948 8.99684 11.5 9C9.853 9 8.5 7.647 8.5 5.999C8.5 4.35 9.853 2.999 11.5 2.999ZM17.5 16H5.5V15.25C5.5 13.031 8.205 10.75 11.5 10.75C14.795 10.75 17.5 13.031 17.5 15.25V16Z"
+                      fill="#F2F7FC" />
+                  </svg>
+                </i>
+                <span class="text-[12px] font-[Raleway] font-semibold mt-[-5px]"
+                  >Resume</span
+                >
+              </div>
+            </a>
+
+            <a
+              role="menuitem"
+              class="inactive-element hover:contrast-50 transition-all"
+              href="./contact.html">
+              <div class="inline-flex flex-col items-center">
+                <i class="text-text2">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M19.5 0H4.5C3.96957 0 3.46086 0.210714 3.08579 0.585786C2.71071 0.960859 2.5 1.46957 2.5 2V5H0.5V7H2.5V9H0.5V11H2.5V13H0.5V15H2.5V18C2.5 18.5304 2.71071 19.0391 3.08579 19.4142C3.46086 19.7893 3.96957 20 4.5 20H19.5C19.7652 20 20.0196 19.8946 20.2071 19.7071C20.3946 19.5196 20.5 19.2652 20.5 19V1C20.5 0.734784 20.3946 0.48043 20.2071 0.292893C20.0196 0.105357 19.7652 0 19.5 0ZM11.5 2.999C13.148 2.999 14.5 4.35 14.5 5.999C14.4971 6.79385 14.1801 7.55533 13.6182 8.11747C13.0562 8.67962 12.2948 8.99684 11.5 9C9.853 9 8.5 7.647 8.5 5.999C8.5 4.35 9.853 2.999 11.5 2.999ZM17.5 16H5.5V15.25C5.5 13.031 8.205 10.75 11.5 10.75C14.795 10.75 17.5 13.031 17.5 15.25V16Z"
+                      fill="#1A1003"
+                      fill-opacity="0.5" />
+                  </svg>
+                </i>
+                <span class="text-[12px] font-[Raleway] font-semibold mt-[-5px]"
+                  >Contact</span
+                >
+              </div>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <!--R3 -->
+      <main
+        class="container pt-7 bg-container rounded-xl w-full sm:min-w-full h-full max-h-full">
+        <!-- Resume -->
+        <section
+          id="resume"
+          class="w-full h-full grid rounded-xl">
+          <div
+            class="px-16 w-full grid grid-cols-1 place-content-center place-items-center">
+            <h1
+              class="py-3.5 w-full flex justify-start items-center text-[2.5rem] font-medium font-['Poppins']">
+              Resume
+              <div
+                class="ml-[3rem] w-[10%] lg:w-[30%] h-[2px] sm:justify-end divider"></div>
+            </h1>
+          </div>
+
+          <div class="px-16 flex flex-col lg:flex-row w-full gap-6">
+            <div
+              id="education"
+              class="container py-3.5 w-full xl:w-1/2 flex flex-col">
+              <div
+                class="text-[28px] font-semibold font-[Poppins] grid grid-cols-[max-content_1fr] gap-[10px]">
+                <img
+                  src="./assets/icons/education.svg"
+                  alt="" />
+                <h2>Education</h2>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 py-7">
+                <!-- Card 1 -->
+                <div
+                  class="container p-3.5 card bg-darkcontrast max-h-[400px] rounded-xl h-[150px]">
+                  <span class="font-normal text-text2">2023</span>
+                  <span class="font-semibold"
+                    >Full-Stack Development Bootcamp</span
+                  >
+                  <span class="font-medium">Harisenin</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="container p-3.5 card bg-contrast1 max-h-[400px] rounded-xl h-[150px]">
+                  <span class="font-normal text-text2">2023</span>
+                  <span class="font-semibold">Data Science Bootcamp</span>
+                  <span class="font-medium">Rakamin Academy</span>
+                </div>
+              </div>
+            </div>
+
+            <div
+              id="experience"
+              class="container py-3.5 w-full xl:w-1/2 flex flex-col">
+              <div
+                class="text-[28px] font-semibold font-[Poppins] grid grid-cols-[max-content_1fr] gap-[10px]">
+                <img
+                  src="./assets/icons/experience.svg"
+                  alt="" />
+                <h2>Experience</h2>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 py-7">
+                <!-- Card 1 -->
+                <div
+                  class="container p-3.5 card bg-darkcontrast max-h-[400px] rounded-xl h-[150px]">
+                  <span class="font-normal text-text2">2023</span>
+                  <span class="font-semibold">Data Science Intern</span>
+                  <span class="font-medium">SkillsUpdates</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                  class="container p-3.5 card bg-contrast1 max-h-[400px] rounded-xl h-[150px]">
+                  <span class="font-normal text-text2">2023</span>
+                  <span class="font-semibold"
+                    >Reporting Engineering Intern</span
+                  >
+                  <span class="font-medium">Jubelio</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="px-16 flex flex-col lg:flex-row w-full gap-6 bg-[#F8FBFB] justify-end">
+            <div
+              id="workskills"
+              class="container py-3.5 w-full xl:w-1/2 flex flex-col">
+              <h2
+                class="py-3.5 text-4xl font-medium font-[Poppins] row-start-1 row-end-2 col-start-1 col-end-3 place-self-start">
+                Work Skills
+              </h2>
+
+              <div class="grid grid-cols-3 gap-x-3 gap-y-2 w-[90%]">
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >NextJS</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >ReactJS</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Python</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Git</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >TailwindCSS</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >ML</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >SQL</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Kotlin</span
+                >
+              </div>
+            </div>
+
+            <div
+              id="softskills"
+              class="container py-3.5 w-full xl:w-1/2 flex flex-col">
+              <h2
+                class="py-3.5 text-4xl font-medium font-[Poppins] row-start-1 row-end-2 col-start-1 col-end-3 place-self-start">
+                Soft Skills
+              </h2>
+
+              <div class="grid grid-cols-2 gap-x-2 gap-y-5 w-[100%] xl:w-[80%]">
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Time Management</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >ReactJS</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Python</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Git</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >TailwindCSS</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >ML</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >SQL</span
+                >
+                <span
+                  class="bg-darkbase w-fit h-fit py-2 px-2 rounded-xl font text-xs"
+                  >Kotlin</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
